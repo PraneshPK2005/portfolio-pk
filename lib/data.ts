@@ -172,54 +172,75 @@ export const skills = {
     ],
     hackathons: [
       {
-        title: "TechCrunch Disrupt Hackathon",
-        position: "1st Place",
-        date: "2024",
-        description: "Built an AI-powered sustainability tracker that won first place among 200+ teams",
-        image: "/placeholder.svg?height=200&width=300&text=TechCrunch+Win",
-      },
+    "title": "Innothon 24 – KCG Engineering College, Chennai",
+    "position": "1st Place",
+    "date": "2024",
+    "description": "Built and presented an innovative solution that won 1st place among top engineering teams.",
+    "image": "/placeholder.svg?height=200&width=300&text=Innothon+1st+Place"
+  },
+  {
+    "title": "Prabhignyan 2024 – Prathyusha Engineering College, Chennai",
+    "position": "Special Prize",
+    "date": "2024",
+    "description": "Awarded Special Prize for an impactful tech solution during the national-level hackathon.",
+    "image": "/placeholder.svg?height=200&width=300&text=Prabhignyan+Special+Prize"
+  },
       {
-        title: "Google Developer Student Club Hackathon",
-        position: "2nd Place",
-        date: "2023",
-        description: "Developed a machine learning model for predicting crop yields",
-        image: "/placeholder.svg?height=200&width=300&text=GDSC+Hackathon",
-      },
-      {
-        title: "Meta AI Hackathon",
-        position: "Top 10",
-        date: "2023",
-        description: "Created an innovative chatbot using Meta's latest AI technologies",
-        image: "/placeholder.svg?height=200&width=300&text=Meta+AI",
-      },
-      {
-        title: "NASA Space Apps Challenge",
-        position: "Regional Winner",
-        date: "2023",
-        description: "Developed a space debris tracking system using satellite data",
-        image: "/placeholder.svg?height=200&width=300&text=NASA+Space",
-      },
-      {
-        title: "Microsoft Imagine Cup",
-        position: "3rd Place",
-        date: "2022",
-        description: "Created an accessibility app for visually impaired users",
-        image: "/placeholder.svg?height=200&width=300&text=MS+Imagine",
-      },
-      {
-        title: "GitHub Global Campus Hackathon",
-        position: "Top 20",
-        date: "2022",
-        description: "Built a collaborative coding platform with real-time features",
-        image: "/placeholder.svg?height=200&width=300&text=GitHub+Hack",
-      },
-      {
-        title: "AngelHack Global",
-        position: "Finalist",
-        date: "2022",
-        description: "Developed a fintech solution for micro-investments",
-        image: "/placeholder.svg?height=200&width=300&text=AngelHack",
-      }
+    "title": "HackWave’23 – NITK, Mangalore",
+    "position": "Participant",
+    "date": "2023",
+    "description": "Participated in a national-level hackathon exploring modern tech innovation challenges.",
+    "image": "/placeholder.svg?height=200&width=300&text=HackWave+23"
+  },
+  {
+    "title": "SmartHacks 2K24 – Anurag University, Hyderabad",
+    "position": "Participant",
+    "date": "2024",
+    "description": "Engaged in rapid prototyping and collaborative tech development during the event.",
+    "image": "/placeholder.svg?height=200&width=300&text=SmartHacks+2K24"
+  },
+  {
+    "title": "HackVerse 5.0 – NITK, Mangalore",
+    "position": "Participant",
+    "date": "2024",
+    "description": "Collaborated with diverse teams to develop innovative solutions under tight timelines.",
+    "image": "/placeholder.svg?height=200&width=300&text=HackVerse+5.0"
+  },
+  {
+    "title": "Industri AI – IIT Madras",
+    "position": "Participant",
+    "date": "2024",
+    "description": "Explored cutting-edge AI applications and engaged with industry experts.",
+    "image": "/placeholder.svg?height=200&width=300&text=Industri+AI"
+  },
+  {
+    "title": "HackOverflow V3.0 – Rajalakshmi Engineering College, Chennai",
+    "position": "Participant",
+    "date": "2024",
+    "description": "Worked on solving real-world challenges in a 24-hour coding sprint.",
+    "image": "/placeholder.svg?height=200&width=300&text=HackOverflow+V3.0"
+  },
+  {
+    "title": "HackVerse – SRM University, Chennai",
+    "position": "Participant",
+    "date": "2024",
+    "description": "Participated in an interdisciplinary hackathon promoting creative tech solutions.",
+    "image": "/placeholder.svg?height=200&width=300&text=HackVerse+SRM"
+  },
+  {
+    "title": "Innowell – Sri Venkateshwara College of Engineering, Chennai",
+    "position": "Participant",
+    "date": "2024",
+    "description": "Contributed to solving healthcare and wellness challenges using technology.",
+    "image": "/placeholder.svg?height=200&width=300&text=Innowell+SVCE"
+  },
+  {
+    "title": "Intel Gen AI Hackathon – KPR Engineering College, Coimbatore",
+    "position": "Participant",
+    "date": "2024",
+    "description": "Explored Gen AI tools and presented solutions in the field of artificial intelligence.",
+    "image": "/placeholder.svg?height=200&width=300&text=Intel+GenAI+Hackathon"
+  }
     ],
     clubs: [
       {

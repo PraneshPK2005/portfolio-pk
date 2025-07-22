@@ -51,10 +51,12 @@ export default function Portfolio() {
   const [activeModal, setActiveModal] = useState<string | null>(null)
   const [isHovering, setIsHovering] = useState(false)
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+});
+
 
   // Section observer for navigation
   useEffect(() => {
@@ -100,6 +102,8 @@ export default function Portfolio() {
     setMobileMenuOpen(false)
   }
 
+  
+
   const handleFormSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
@@ -109,18 +113,18 @@ export default function Portfolio() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData), // assumes formData = { name, email, message }
+      body: JSON.stringify(formData),  // formData must include name, email, subject, message
     });
 
     if (response.ok) {
       alert("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } else {
-      alert("Error sending message. Please try again later.");
+      alert("Failed to send. Try again.");
     }
   } catch (error) {
-    console.error("Error sending form:", error);
-    alert("Error sending message. Please try again later.");
+    console.error("Error:", error);
+    alert("Something went wrong!");
   }
 };
 
@@ -801,52 +805,56 @@ const downloadCV = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleFormSubmit} className="space-y-6">
-                  <div>
-                    <Input
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                      className={`${isDarkMode ? "bg-white/10 border-green-500/30 text-white" : "bg-black/10 border-green-600/30 text-gray-900"} placeholder:text-gray-400 focus:border-green-400`}
-                      onMouseEnter={() => setIsHovering(true)}
-                      onMouseLeave={() => setIsHovering(false)}
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      type="email"
-                      placeholder="Your Email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                      className={`${isDarkMode ? "bg-white/10 border-green-500/30 text-white" : "bg-black/10 border-green-600/30 text-gray-900"} placeholder:text-gray-400 focus:border-green-400`}
-                      onMouseEnter={() => setIsHovering(true)}
-                      onMouseLeave={() => setIsHovering(false)}
-                    />
-                  </div>
-                  <div>
-                    <Textarea
-                      placeholder="Your Message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      required
-                      rows={5}
-                      className={`${isDarkMode ? "bg-white/10 border-green-500/30 text-white" : "bg-black/10 border-green-600/30 text-gray-900"} placeholder:text-gray-400 focus:border-green-400 resize-none`}
-                      onMouseEnter={() => setIsHovering(true)}
-                      onMouseLeave={() => setIsHovering(false)}
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg shadow-lg shadow-green-600/25"
-                    onMouseEnter={() => setIsHovering(true)}
-                    onMouseLeave={() => setIsHovering(false)}
-                  >
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
-                  </Button>
-                </form>
+                <form onSubmit={handleFormSubmit} className="space-y-4 max-w-xl mx-auto">
+  <div>
+    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+    <Input
+      id="name"
+      type="text"
+      required
+      value={formData.name}
+      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+    />
+  </div>
+
+  <div>
+    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+    <Input
+      id="email"
+      type="email"
+      required
+      value={formData.email}
+      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+    />
+  </div>
+
+  <div>
+    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
+    <Input
+      id="subject"
+      type="text"
+      required
+      value={formData.subject}
+      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+    />
+  </div>
+
+  <div>
+    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+    <Textarea
+      id="message"
+      rows={5}
+      required
+      value={formData.message}
+      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+    />
+  </div>
+
+  <Button type="submit" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md">
+    Send Message
+  </Button>
+</form>
+
               </CardContent>
             </Card>
           </div>
