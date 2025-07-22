@@ -86,7 +86,7 @@ export const skills = {
       website: "https://www.neoryde.in/",
       duration: "July 2025 - Present",
       description:
-        "Developing an platform for Emplyee Transporatation Web Platform using Node.js, React.js, PostgreSQL, and Docker",
+        "Developing an platform for Employee Transporatation Web Platform using Node.js, React.js, PostgreSQL, and Docker",
     },
     {
       title: "Backend Developer Intern",

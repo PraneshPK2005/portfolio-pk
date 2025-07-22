@@ -717,7 +717,7 @@ const downloadCV = () => {
           {/* View More Projects Button */}
           <div className="text-center">
             <Button
-              onClick={() => window.open("https://github.com/username", "_blank")}
+              onClick={() => window.open("https://github.com/PraneshPk2005", "_blank")}
               variant="outline"
               className="border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black px-8 py-3 text-lg rounded-lg group"
               onMouseEnter={() => setIsHovering(true)}
