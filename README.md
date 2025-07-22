@@ -4,7 +4,9 @@ add an popup message when email is sent
 add image in certificate 
 
 
-try to add image corousel in the hackathons
+try to add image corousel in the hackathons, add description of hackathons
+
+try to separate won and participated hackathons. 
 
 
 get svg icons for the skills section
