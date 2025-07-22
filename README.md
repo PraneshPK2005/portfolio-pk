@@ -35,6 +35,11 @@ enhance the light theme with an proper colour
 
 check the download cv functionality 
 
+add responsiveness 
+
+
+try to make the main scrollbar to be green in colour
+
 add your image 
 
 
