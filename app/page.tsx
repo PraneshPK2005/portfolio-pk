@@ -102,7 +102,26 @@ export default function Portfolio() {
     setMobileMenuOpen(false)
   }
 
+  const codeSnippet = `// Contact Form Structure
+const contactForm = {
+  name: "${formData.name || "Your Name"}",
+  email: "${formData.email || "your.email@example.com"}",
+  message: \`${formData.message || "Your message here..."}\`
+}
+
+// Send message function
+const sendMessage = async () => {
+  const response = await fetch('/api/contact', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(contactForm)
+  })
   
+  return response.json()
+}`
+
 
   const handleFormSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
@@ -782,7 +801,7 @@ const downloadCV = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
+{/* Contact Section */}
       <section
         id="contact"
         className={`py-20 px-4 ${isDarkMode ? "bg-black/40" : "bg-gradient-to-br from-pink-50/50 to-blue-50/50"}`}
@@ -796,8 +815,24 @@ const downloadCV = () => {
           </p>
 
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            {/* Code Snippet */}
+            <Card className={`${isDarkMode ? "bg-black/60" : "bg-gray-900/90"} backdrop-blur-sm border-green-500/20`}>
+              <CardHeader>
+                <CardTitle className="text-white text-xl flex items-center">
+                  <Code className="w-5 h-5 mr-2 text-green-400" />
+                  Contact Form Structure
+                </CardTitle>
+                <CardDescription className="text-gray-300">Real-time preview of your form data</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <pre className="text-sm text-green-400 font-mono leading-relaxed overflow-x-auto">
+                  <code>{codeSnippet}</code>
+                </pre>
+              </CardContent>
+            </Card>
+
             {/* Contact Form */}
-            <Card className={`${cardClasses} lg:col-span-2`}>
+            <Card className={`${cardClasses}`}>
               <CardHeader>
                 <CardTitle className={`${textClasses} text-2xl`}>Send Message</CardTitle>
                 <CardDescription className={mutedTextClasses}>
@@ -805,56 +840,63 @@ const downloadCV = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleFormSubmit} className="space-y-4 max-w-xl mx-auto">
-  <div>
-    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
-    <Input
-      id="name"
-      type="text"
-      required
-      value={formData.name}
-      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-    />
-  </div>
-
-  <div>
-    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-    <Input
-      id="email"
-      type="email"
-      required
-      value={formData.email}
-      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-    />
-  </div>
-
-  <div>
-    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
-    <Input
-      id="subject"
-      type="text"
-      required
-      value={formData.subject}
-      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-    />
-  </div>
-
-  <div>
-    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
-    <Textarea
-      id="message"
-      rows={5}
-      required
-      value={formData.message}
-      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-    />
-  </div>
-
-  <Button type="submit" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md">
-    Send Message
-  </Button>
-</form>
-
+                <form onSubmit={handleFormSubmit} className="space-y-6">
+                  <div>
+                    <Input
+                      placeholder="Your Name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                      className={`${isDarkMode ? "bg-white/10 border-green-500/30 text-white" : "bg-black/10 border-green-600/30 text-gray-900"} placeholder:text-gray-400 focus:border-green-400`}
+                      onMouseEnter={() => setIsHovering(true)}
+                      onMouseLeave={() => setIsHovering(false)}
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      type="email"
+                      placeholder="Your Email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                      className={`${isDarkMode ? "bg-white/10 border-green-500/30 text-white" : "bg-black/10 border-green-600/30 text-gray-900"} placeholder:text-gray-400 focus:border-green-400`}
+                      onMouseEnter={() => setIsHovering(true)}
+                      onMouseLeave={() => setIsHovering(false)}
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      placeholder="Subject"
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      required
+                      className={`${isDarkMode ? "bg-white/10 border-green-500/30 text-white" : "bg-black/10 border-green-600/30 text-gray-900"} placeholder:text-gray-400 focus:border-green-400`}
+                      onMouseEnter={() => setIsHovering(true)}
+                      onMouseLeave={() => setIsHovering(false)}
+                    />  
+                  </div>
+                  <div>
+                    <Textarea
+                      placeholder="Your Message"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      required
+                      rows={5}
+                      className={`${isDarkMode ? "bg-white/10 border-green-500/30 text-white" : "bg-black/10 border-green-600/30 text-gray-900"} placeholder:text-gray-400 focus:border-green-400 resize-none`}
+                      onMouseEnter={() => setIsHovering(true)}
+                      onMouseLeave={() => setIsHovering(false)}
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg shadow-lg shadow-green-600/25"
+                    onMouseEnter={() => setIsHovering(true)}
+                    onMouseLeave={() => setIsHovering(false)}
+                  >
+                    <Send className="w-4 h-4 mr-2" />
+                    Send Message
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </div>
