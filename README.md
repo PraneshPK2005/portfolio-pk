@@ -37,6 +37,9 @@ check the download cv functionality
 
 add responsiveness 
 
+add element or some animations in the home page 
+
+
 
 try to make the main scrollbar to be green in colour
 
